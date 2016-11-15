@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-body text-justify">
+                <h3>
+                  <span
+                  [ngClass]="{'text-muted': i != activeWordIndex,
+                              'text-underline': i == activeWordIndex,
+                              'red-word': i == activeWordIndex}"
+                  *ngFor="let word of text; let i = index">
+                    {{word}}
+                  </span>
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-5 col-sm-offset-3 has-error">
+        <input
+        [(ngModel)]="userInput"
+        (ngModelChange)="userTyped()"
+        name="userInput"
+        type="text"
+        class="form-control input-lg"
+        autofocus>
+    </div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-primary btn-lg">80 WPM</button>
+    </div>
+</div>
